@@ -19,7 +19,7 @@ class PrivateAssetStrategy < CurlDownloadStrategy
 
   def github_token
     ENV["HOMEBREW_GITHUB_API_TOKEN"] || ENV["GITHUB_TOKEN"] ||
-      Utils.popen_read("gh", "auth", "token").strip.presence ||
+      %w[/opt/homebrew/bin/gh /usr/local/bin/gh gh].filter_map { |g| t = Utils.popen_read(g, "auth", "token").strip rescue ""; t.empty? ? nil : t }.first ||
       raise("PrivateAssetStrategy: no GitHub token (set HOMEBREW_GITHUB_API_TOKEN or `gh auth login`)")
   end
 
