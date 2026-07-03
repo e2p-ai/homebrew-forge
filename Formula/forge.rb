@@ -37,9 +37,9 @@ class Forge < Formula
   end
 
   def install
-    bin.install "forge/forge"
-    bin.install "forge/forge-voice"
-    bin.install "forge/forge-server"
+    bin.install "forge"
+    bin.install "forge-voice"
+    bin.install "forge-server"
   end
 
   test do
