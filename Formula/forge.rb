@@ -14,25 +14,25 @@ require_relative "../lib/private_asset_strategy"
 class Forge < Formula
   desc "Agentic coding REPL — model-agnostic, multi-voice, with debate, MCP, hooks, signed WALs"
   homepage "https://github.com/e2p-ai/forge"
-  version "0.6.4"
+  version "0.6.5"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/e2p-ai/forge/releases/download/v#{version}/forge-v#{version}-aarch64-apple-darwin.tar.gz", using: PrivateAssetStrategy
-      sha256 "2ba15c5acc1760d8ce4100ee2b28899222988a619c22e3547b438f5ea973f062"
+      sha256 "310abe265c6270d43753fd3813e4daf566e51c389fbad5865458a192c18b4342"
     else
       url "https://github.com/e2p-ai/forge/releases/download/v#{version}/forge-v#{version}-x86_64-apple-darwin.tar.gz", using: PrivateAssetStrategy
-      sha256 "d5ca956ebcee68abc47bd331aa8a747b92e30ff92582880b225ded39a17325c6"
+      sha256 "ca3784d2d6a135ed26168d64390f76a260ce7d5a1efb86b65708bbc04780bf47"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/e2p-ai/forge/releases/download/v#{version}/forge-v#{version}-aarch64-unknown-linux-gnu.tar.gz", using: PrivateAssetStrategy
-      sha256 "60236f7e775a218d6f299445cb66cac46fcfe854d0e099b84597fd4a1a4a969b"
+      sha256 "ea6c5526f704aa0499634b9b3ddf7650ad1f5b5b12c3d8cf19866b2eb0d30126"
     else
       url "https://github.com/e2p-ai/forge/releases/download/v#{version}/forge-v#{version}-x86_64-unknown-linux-gnu.tar.gz", using: PrivateAssetStrategy
-      sha256 "c26bc4e1a925750b8d58981ed124238d09eba6cfdc1b5660c71d0e9ff066f43f"
+      sha256 "76e7ac3df424205c25a6dc30fadf414c9274271177c68e1639cdb344d1ea18b3"
     end
   end
 
